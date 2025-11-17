@@ -13,15 +13,15 @@
   <label>Occupation</label>
   <select [(ngModel)]="formData.occupation" (change)="onOccupationChange()">
     <option value="">-- Select --</option>
-    <option>
-    
+    <option *ngFor="let occ of occupations" [value]="occ.rating">
+      {{occ.name}}
     </option>
   </select>
 
   <label>Death – Sum Insured</label>
   <input type="number" [(ngModel)]="formData.deathSumInsured" />
 
-  <div>
-    <h3>Monthly Premium: </h3>
+  <div *ngIf="premium !== null">
+    <h3>Monthly Premium: {{ premium | currency:'USD' }}</h3>
   </div>
 </div>
