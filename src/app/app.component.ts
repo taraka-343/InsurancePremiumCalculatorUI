@@ -14,4 +14,14 @@ export class AppComponent {
     { name: 'Mechanic', rating: 'Heavy Manual' },
     { name: 'Florist', rating: 'Light Manual' },
     { name: 'Other', rating: 'Heavy Manual' }
-  ];}
+  ];
+  premium: number | null = null;
+
+  formData = {
+    name: "",
+    age: 0,
+    dateOfBirth: "",
+    occupation: "",
+    deathSumInsured: 0
+  };
+}
