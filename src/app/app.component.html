@@ -1,27 +1,40 @@
-<div>
-  <h2>Insurance Premium Calculator</h2>
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">Insurance Premium Calculator</h2>
+    </div>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="formData.name" placeholder="Enter your name">
+      </div>
 
-  <label>Name</label>
-  <input type="text" [(ngModel)]="formData.name"/>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age Next Birthday</label>
+        <input type="number" id="age" class="form-control" [(ngModel)]="formData.age" placeholder="Enter your age">
+      </div>
 
-  <label>Age Next Birthday</label>
-  <input type="number" [(ngModel)]="formData.age"/>
+      <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="month" id="dob" class="form-control" [(ngModel)]="formData.dateOfBirth">
+      </div>
 
-  <label>Date of Birth</label>
-  <input type="month" [(ngModel)]="formData.dateOfBirth"/>
+      <div class="mb-3">
+        <label for="occupation" class="form-label">Occupation</label>
+        <select id="occupation" class="form-select" [(ngModel)]="formData.occupation" (change)="onOccupationChange()">
+          <option value="">-- Select --</option>
+          <option *ngFor="let occ of occupations" [value]="occ.rating">{{ occ.name }}</option>
+        </select>
+      </div>
 
-  <label>Occupation</label>
-  <select [(ngModel)]="formData.occupation" (change)="onOccupationChange()">
-    <option value="">-- Select --</option>
-    <option *ngFor="let occ of occupations" [value]="occ.rating">
-      {{occ.name}}
-    </option>
-  </select>
+      <div class="mb-3">
+        <label for="deathSum" class="form-label">Death – Sum Insured</label>
+        <input type="number" id="deathSum" class="form-control" [(ngModel)]="formData.deathSumInsured" placeholder="Enter sum insured">
+      </div>
 
-  <label>Death – Sum Insured</label>
-  <input type="number" [(ngModel)]="formData.deathSumInsured" />
-
-  <div *ngIf="premium !== null">
-    <h3>Monthly Premium: {{ premium | currency:'USD' }}</h3>
+      <div *ngIf="premium !== null" class="alert alert-info text-center">
+        <h4>Monthly Premium: {{ premium | currency:'USD' }}</h4>
+      </div>
+    </div>
   </div>
 </div>
