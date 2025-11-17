@@ -9,4 +9,7 @@ export class AppServiceService {
   private apiUrl = "https://localhost:7065/api/Premium/calculate"
 
   constructor(private http: HttpClient) { }
+  calculatePremium(data: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, data);
+  }
 }
