@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'InsurancePremiumCalcUI';
-}
+  occupations = [
+    { name: 'Cleaner', rating: 'Light Manual' },
+    { name: 'Doctor', rating: 'Professional' },
+    { name: 'Author', rating: 'White Collar' },
+    { name: 'Farmer', rating: 'Heavy Manual' },
+    { name: 'Mechanic', rating: 'Heavy Manual' },
+    { name: 'Florist', rating: 'Light Manual' },
+    { name: 'Other', rating: 'Heavy Manual' }
+  ];}
