@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Appservice } from './app-service.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,4 +24,5 @@ export class AppComponent {
     occupation: "",
     deathSumInsured: 0
   };
+  constructor(private appService: Appservice) {}
 }
