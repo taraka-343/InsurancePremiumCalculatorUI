@@ -1,27 +1,43 @@
-# InsurancePremiumCalcUI
+# Insurance Premium Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
+A simple Angular application to calculate insurance premiums based on user details like name, age, date of birth, occupation, and sum insured.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## **Features**
+- Input user details: Name, Age , Date of Birth, Occupation, and Death Sum Insured.
+- Calculates monthly insurance premium based on predefined occupation rating factors.
+- UI with Bootstrap styling.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## **Technologies Used**
+- Angular 10+
+- TypeScript
+- Bootstrap (styling)
+- RxJS (observables)
+- HTTPClient for API integration (when conneting to backend)
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## **Assumptions**
+1. Occupation ratings are predefined and fixed in the frontend (e.g., Doctor = Professional, Cleaner = Light Manual).
+2. Age next birthday and sum insured cannot be zero or negative.
+3. Premium calculation logic to be handled by a backend API (`Calling RESTful Service`) returning a JSON object `{ monthlyPremium: number }`.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## **Clarifications**
+1. `ngModel` is used for two-way binding of form inputs.
+2. Template driven form is used to design the form.
+3. Backend API wil get called once changing the DropDown of Occupation.
+4. Injecting service using DI to reuse logic.
+5. CORS must be enabled on the backend if accessing API from `localhost:4200`.
+6. This project assumes Angular CLI is installed and Node.js environment is set up.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## **Setup and Run**
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/InsurancePremiumCalculatorUI.git
