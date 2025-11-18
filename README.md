@@ -40,4 +40,4 @@ A simple Angular application to calculate insurance premiums based on user detai
 ## **Setup and Run**
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/InsurancePremiumCalculatorUI.git
+git clone https://github.com/taraka-343/InsurancePremiumCalculatorUI.git
